@@ -19,3 +19,5 @@ spec:
           image: varaprasad1/devops-first-image-1:{{ .Values.image.tag }}
           ports:
             - containerPort: 8000
+      imagePullSecrets:
+        - name: regcred
