@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-first-app
+  labels:
+    app: devops-first-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-first-app
+  template:
+    metadata:
+      labels:
+        app: devops-first-app
+    spec:
+      containers:
+        - name: devops-first-app
+          image: varaprasad1/devops-first-image-1:{{ .Values.image.tag }}
+          ports:
+            - containerPort: 8000
