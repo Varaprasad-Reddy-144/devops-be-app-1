@@ -15,6 +15,7 @@ app.get("/health", async (req, res, next) => {
     })
 });
 
+
 app.get("/data", async (req, res, next) => {
   res.status(200).json({
     success: true,
